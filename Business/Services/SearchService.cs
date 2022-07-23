@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Business.Interfaces;
 using Common.Interfaces;
-using Common.Models;
+using Business.Models;
 using Microsoft.AspNetCore.WebUtilities;
 
 namespace Business.Services
@@ -25,8 +25,8 @@ namespace Business.Services
             {
                 searchResponse.Add(new BlobSearchIndexResponse
                 {
-                    BlobContent = res.Document.BlobContent,
-                    EncryptedBlobURI = this.Decrypt(res.Document.EncryptedBlobURI)
+                    Content = res.Document.BlobContent,
+                    FileURI = this.Decrypt(res.Document.EncryptedBlobURI)
                 });
             }
 

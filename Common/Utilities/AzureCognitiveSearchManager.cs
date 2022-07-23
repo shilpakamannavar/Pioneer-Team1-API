@@ -28,7 +28,8 @@ namespace Common.Utilities
                 IncludeTotalCount = true
             };
 
-            options.Select.Add(text);
+            options.Select.Add("content");
+            options.Select.Add("metadata_storage_path");
             var searchResults = (await _searchClient.SearchAsync<BlobSearchIndexResponse>(text, options).ConfigureAwait(false));
             return searchResults.Value.GetResults().ToList();
         }
