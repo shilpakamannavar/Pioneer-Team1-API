@@ -8,6 +8,6 @@ namespace Business.Interfaces
 {
     public interface ISearchService
     {
-        Task<List<BlobSearchIndexResponse>> Search(string text);
+        Task<List<BlobSearchIndexResponse>> SearchAsync(string text);
     }
 }
